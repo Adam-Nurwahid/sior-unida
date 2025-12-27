@@ -17,7 +17,7 @@ if (isset($_POST['update'])) {
     $update = mysqli_query($koneksi, "UPDATE mst_jenis_transportasi SET kode='$kode', nama='$nama' WHERE id='$id'");
 
     if ($update) {
-        echo "<script>alert('Data Berhasil Diupdate!'); window.location='mst_lokasi.php';</script>";
+        echo "<script>alert('Data Berhasil Diupdate!'); window.location='mst_transport.php';</script>";
     } else {
         echo "<script>alert('Gagal Update Data');</script>";
     }
@@ -51,7 +51,7 @@ if (isset($_POST['update'])) {
                                 <input type="text" name="nama" class="form-control" value="<?php echo $row['nama']; ?>" required>
                             </div>
                             <div class="d-flex justify-content-between">
-                                <a href="mst_lokasi.php" class="btn btn-secondary">KELUAR</a>
+                                <a href="mst_transport.php" class="btn btn-secondary">KELUAR</a>
                                 <button type="submit" name="update" class="btn btn-warning text-white">UPDATE</button>
                             </div>
                         </form>

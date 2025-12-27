@@ -15,6 +15,7 @@ if (isset($_POST['login'])) {
 
         // Simpan data penting ke Session
         $_SESSION['status'] = "login";
+        $_SESSION['user_id'] = $data['id'];
         $_SESSION['username'] = $data['username'];
         $_SESSION['nama_lengkap'] = $data['nama_lengkap']; 
         $_SESSION['role'] = $data['role']; 

@@ -16,7 +16,7 @@ if ($_SESSION['role'] != 'admin') {
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <title>Master Jenis Lokasi - SIOR UNIDA</title>
+    <title>Master Jenis Transportasi - SIOR UNIDA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
@@ -32,7 +32,7 @@ if ($_SESSION['role'] != 'admin') {
                 <div class="card shadow-sm border-0">
                     <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
                         <h6 class="m-0 fw-bold text-dark">Daftar Jenis Transportasi</h6>
-                        <a href="mst_lokasi_tambah.php" class="btn btn-sm btn-primary">
+                        <a href="mst_transport_tambah.php" class="btn btn-sm btn-primary">
                             <i class="bi bi-plus-circle me-1"></i> TAMBAH
                         </a>
                     </div>
@@ -60,10 +60,10 @@ if ($_SESSION['role'] != 'admin') {
                                         <td class="text-center fw-bold"><?php echo $row['kode']; ?></td>
                                         <td><?php echo $row['nama']; ?></td>
                                         <td class="text-center">
-                                            <a href="mst_lokasi_edit.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-warning text-white me-1">
+                                            <a href="mst_transport_edit.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-warning text-white me-1">
                                                 <i class="bi bi-pencil-square"></i> Edit
                                             </a>
-                                            <a href="mst_lokasi_hapus.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin hapus data <?php echo $row['nama']; ?>?')">
+                                            <a href="mst_transport_hapus.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin hapus data <?php echo $row['nama']; ?>?')">
                                                 <i class="bi bi-trash"></i> Hapus
                                             </a>
                                         </td>

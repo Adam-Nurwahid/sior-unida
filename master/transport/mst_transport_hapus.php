@@ -15,15 +15,15 @@ if (isset($_GET['id'])) {
     if ($hapus) {
         echo "<script>
                 alert('Data Berhasil Dihapus!');
-                window.location.href='mst_lokasi.php';
+                window.location.href='mst_transport.php';
               </script>";
     } else {
         echo "<script>
                 alert('Gagal Menghapus Data!');
-                window.location.href='mst_lokasi.php';
+                window.location.href='mst_transport.php';
               </script>";
     }
 } else {
-    header("location:mst_lokasi.php");
+    header("location:mst_transport.php");
 }
 ?>

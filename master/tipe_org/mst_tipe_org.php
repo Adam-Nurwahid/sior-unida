@@ -32,7 +32,7 @@ if ($_SESSION['role'] != 'admin') {
                 <div class="card shadow-sm border-0">
                     <div class="card-header bg-white py-3 d-flex justify-content-between align-items-center">
                         <h6 class="m-0 fw-bold text-dark">Daftar Jenis Kegiatan</h6>
-                        <a href="mst_kegiatan_tambah.php" class="btn btn-sm btn-primary">
+                        <a href="mst_tipe_org_tambah.php" class="btn btn-sm btn-primary">
                             <i class="bi bi-plus-circle me-1"></i> TAMBAH
                         </a>
                     </div>
@@ -44,7 +44,7 @@ if ($_SESSION['role'] != 'admin') {
                                     <tr>
                                         <th width="50">No</th>
                                         <th width="150">Kode</th>
-                                        <th>Nama Jenis Kegiatan</th>
+                                        <th>Nama Jenis Organisasi</th>
                                         <th width="200">Aksi</th>
                                     </tr>
                                 </thead>
@@ -52,7 +52,7 @@ if ($_SESSION['role'] != 'admin') {
                                     <?php 
                                     $no = 1;
                                     // Query ambil data dari database
-                                    $query = mysqli_query($koneksi, "SELECT * FROM mst_jenis_kegiatan ORDER BY kode ASC");
+                                    $query = mysqli_query($koneksi, "SELECT * FROM mst_jenis_org ORDER BY kode ASC");
                                     while ($row = mysqli_fetch_array($query)) { 
                                     ?>
                                     <tr>
@@ -60,10 +60,10 @@ if ($_SESSION['role'] != 'admin') {
                                         <td class="text-center fw-bold"><?php echo $row['kode']; ?></td>
                                         <td><?php echo $row['nama']; ?></td>
                                         <td class="text-center">
-                                            <a href="mst_kegiatan_edit.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-warning text-white me-1">
+                                            <a href="mst_tipe_org_edit.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-warning text-white me-1">
                                                 <i class="bi bi-pencil-square"></i> Edit
                                             </a>
-                                            <a href="mst_kegiatan_hapus.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin hapus data <?php echo $row['nama']; ?>?')">
+                                            <a href="mst_tipe_org_hapus.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Yakin hapus data <?php echo $row['nama']; ?>?')">
                                                 <i class="bi bi-trash"></i> Hapus
                                             </a>
                                         </td>

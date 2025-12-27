@@ -13,7 +13,7 @@ if (isset($_POST['simpan'])) {
     $simpan = mysqli_query($koneksi, "INSERT INTO mst_jenis_transportasi (kode, nama) VALUES ('$kode', '$nama')");
 
     if ($simpan) {
-        echo "<script>alert('Data Berhasil Disimpan!'); window.location='mst_lokasi.php';</script>";
+        echo "<script>alert('Data Berhasil Disimpan!'); window.location='mst_transport.php';</script>";
     } else {
         echo "<script>alert('Gagal Menyimpan Data');</script>";
     }
@@ -46,7 +46,7 @@ if (isset($_POST['simpan'])) {
                                 <label class="form-label">Nama Jenis Transportasi</label>
                                 <input type="text" name="nama" class="form-control" placeholder="Contoh: Seminar Nasional" required>
                             </div>
-                            <div class="d-flex justify-content-between"> <a href="mst_lokasi.php" class="btn btn-secondary">KELUAR</a>
+                            <div class="d-flex justify-content-between"> <a href="mst_transport.php" class="btn btn-secondary">KELUAR</a>
                                 <button type="submit" name="simpan" class="btn btn-success">SIMPAN</button>
                             </div>
                         </form>

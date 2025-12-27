@@ -10,20 +10,20 @@ if ($_SESSION['role'] != 'admin') {
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $hapus = mysqli_query($koneksi, "DELETE FROM mst_jenis_kegiatan WHERE id='$id'");
+    $hapus = mysqli_query($koneksi, "DELETE FROM mst_jenis_kepemilikankegiatan WHERE id='$id'");
 
     if ($hapus) {
         echo "<script>
                 alert('Data Berhasil Dihapus!');
-                window.location.href='mst_kegiatan.php';
+                window.location.href='mst_kepemilikan.php';
               </script>";
     } else {
         echo "<script>
                 alert('Gagal Menghapus Data!');
-                window.location.href='mst_kegiatan.php';
+                window.location.href='mst_kepemilikan.php';
               </script>";
     }
 } else {
-    header("location:mst_kegiatan.php");
+    header("location:mst_kepemilikan.php");
 }
 ?>

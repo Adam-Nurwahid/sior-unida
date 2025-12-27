@@ -41,24 +41,31 @@ $current_url = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                     <li><a href="<?php echo $base_url; ?>/master/tipe_org/mst_tipe_org.php" class="nav-link text-white-50">Tipe Organisasi</a></li>
                     <li><a href="<?php echo $base_url; ?>/master/bantuan/mst_bantuan.php" class="nav-link text-white-50">Jenis Bantuan</a></li>
                     <li><a href="<?php echo $base_url; ?>/master/bank/mst_bank.php" class="nav-link text-white-50">Nama Bank</a></li>
+                    <li><a href="<?php echo $base_url; ?>/organisasi/org_periode.php" class="nav-link text-white-50">Periode Daftar Ulang</a></li>
                 </ul>
             </div>
         </li>
 
         <?php } ?>
 
+        <?php 
+        // Logika: Menu ini HANYA tampil jika role BUKAN admin
+        if(isset($_SESSION['role']) && $_SESSION['role'] != 'admin') { 
+        ?>
+        
         <li class="nav-item mb-1">
             <a href="#menuOrganisasi" data-bs-toggle="collapse" class="nav-link text-white dropdown-toggle">
                 <i class="bi bi-people me-2"></i> Organisasi
             </a>
-            <div class="collapse <?php echo strpos($current_url, '/organisasi/') !== false || strpos($current_url, 'org_') !== false ? 'show' : ''; ?>" id="menuOrganisasi">
+            <div class="collapse <?php echo strpos($current_url, '/organisasi/') !== false ? 'show' : ''; ?>" id="menuOrganisasi">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small ms-4">
                     <li><a href="<?php echo $base_url; ?>/organisasi/org_profil.php" class="nav-link text-white-50">Profil Organisasi</a></li>
                     <li><a href="<?php echo $base_url; ?>/organisasi/org_pengurus.php" class="nav-link text-white-50">Pengurus Organisasi</a></li>
-                    <li><a href="<?php echo $base_url; ?>/organisasi/org_periode.php" class="nav-link text-white-50">Periode Daftar Ulang</a></li>
                 </ul>
             </div>
         </li>
+
+        <?php }?>
 
         <li class="nav-item mb-1">
             <a href="#menuSirajin" data-bs-toggle="collapse" class="nav-link text-white dropdown-toggle">
