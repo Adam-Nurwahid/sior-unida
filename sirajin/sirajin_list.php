@@ -135,29 +135,29 @@ function getStatusBadge($status) {
                                     </td>
                                     
                                     <td class="text-center">
-                                        <a href="sirajin_detail.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-info text-white mb-1" title="Detail">
-                                            <i class="bi bi-eye"></i>
-                                        </a>
+    <a href="sirajin_detail.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-info text-white mb-1" title="Detail">
+        <i class="bi bi-eye"></i>
+    </a>
 
-                                        <?php if($role != 'admin') { ?>
-                                            <?php if(in_array($row['status_perizinan'], ['Draft', 'Perlu Revisi'])) { ?>
-                                                <a href="sirajin_edit.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-warning text-white mb-1" title="Edit/Revisi">
-                                                    <i class="bi bi-pencil"></i>
-                                                </a>
-                                            <?php } ?>
+    <?php if($role != 'admin') { ?>
+        <?php if(in_array($row['status_perizinan'], ['Draft', 'Perlu Revisi', 'Pengajuan Baru'])) { ?>
+            <a href="sirajin_edit.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-warning text-white mb-1" title="Edit/Revisi">
+                <i class="bi bi-pencil"></i>
+            </a>
+        <?php } ?>
 
-                                            <?php if($row['status_perizinan'] == 'Draft') { ?>
-                                                <a href="sirajin_hapus.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger mb-1" onclick="return confirm('Yakin hapus?')" title="Hapus">
-                                                    <i class="bi bi-trash"></i>
-                                                </a>
-                                            <?php } ?>
+        <?php if(in_array($row['status_perizinan'], ['Draft', 'Pengajuan Baru'])) { ?>
+            <a href="sirajin_hapus.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-danger mb-1" onclick="return confirm('Yakin hapus?')" title="Hapus">
+                <i class="bi bi-trash"></i>
+            </a>
+        <?php } ?>
 
-                                        <?php } else { ?>
-                                            <a href="sirajin_proses.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-success mb-1" title="Proses Perizinan">
-                                                <i class="bi bi-check-circle"></i> Proses
-                                            </a>
-                                        <?php } ?>
-                                    </td>
+    <?php } else { ?>
+        <a href="sirajin_proses.php?id=<?php echo $row['id']; ?>" class="btn btn-sm btn-success mb-1" title="Proses Perizinan">
+            <i class="bi bi-check-circle"></i> Proses
+        </a>
+    <?php } ?>
+</td>
                                 </tr>
                                 <?php 
                                     } 
